@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* CSS Document */
+body{
+	margin: 0 auto;
+	padding: 0;
+}
+.nav{
+	height:100px;
+	display:flex;
+	justify-content: center;
+}
+
+.nav .logo1{
+	width: 200px;
+	height: 100%;
+	text-align: end;
+	font-size: 64px;
+	color: #3bfedf;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "sans-serif";
+	
+}
+.nav .logo2{
+	width: 100px;
+	height:100%;
+	text-align:left;
+	margin-top: 5px;
+	font-size: 40px;
+	color: #317DE5;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "sans-serif";
+	
+}
+.nav .choose{
+	background-color: aquamarine;
+	width: 120px;
+	height:100%;
+	list-style: none;
+	color:#AFE4EF;
+	text-align:center;
+	font-size:18px;
+	font-weight: bold;
+    transition: all 1s;
+	line-height: 130px;
+}
+.nav .choose li{
+	list-style: none;
+	width:120px;
+	text-align: center;
+}
+
+.nav .choose:hover{
+	background-color:#2e2e38;
+	color: #ffffff;
+	transform: scale(1.05);
+	
+}
+.nav .choose li:hover{
+	background-color: #49495D;
+	color: #ffffff;
+	transform: scale(1.05);
+	
+}
+.nav .choose li{
+	color: #ffffff;
+	height:40px;
+	
+}
+.main{
+	padding-top: 20px;
+	width: 1280px;
+	height: 720px;
+}
+.suan{
+	list-style: none;
+	float:left;
+}
+.suanfa{
+	list-style: none;
+	background-color:#316BAD;
+	width: 275px;
+	height:280px;
+	margin:0px 0px 40px 40px;;
+	padding-top:20px;
+	padding-left: 23px;
+	border-radius:25px;
+	
+}
+.info{
+	color:#FFFFFF;
+}
+.info .sorttext{
+	margin-left: 170px;
+	background-color:#209918;
+	text-align: center;
+	color:#FFFFFF;
+	border-radius:5px;
+	text-decoration:none;
+}
+.filter{
+	padding: 5px 8px;
+	margin:0px 0px 8px 8px;
+	position: relative;
+	top:10px;
+	background-color:#5F5D5D;
+	border-radius:10px;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.sim{
+	margin-left: 150px;
+	background-color:#209918;
+	text-align: center;
+	color:#FFFFFF;
+	border-radius:5px;
+	text-decoration:none;
+}
+
+

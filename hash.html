@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<title>Hash Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="./Script/jquery.js"></script>
+<script src="./Script/hash.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./css/input.css" />
+<link rel="stylesheet" href="./css/nav.css" />
+<link rel="stylesheet" href="./css/hash.css" />
+<style>
+	#sort_in{
+		margin: 0 auto;
+	}
+	#tit{
+	text-align: center;
+	color:#1E1D7F;
+	font-family: "微软雅黑";
+	margin-bottom: 30px;
+}
+	.btn{
+	height: 50px;
+	width:80px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	border-radius: 24px;
+	border:none;
+	outline:none;
+	cursor:pointer;
+	background-color:#429BE5;
+	color:aliceblue;
+	font-weight: bold;
+	font-size:16px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+	position: relative;
+	top:-90px;
+	left:840px;
+}
+
+</style>
+</head>
+<!-----------导航部分--------------->
+<div class="navbar">
+			<div class="nav">
+				<ul>
+					<li>
+						<a href=".\start.html" id="logo">VisualGo</a>
+					</li>
+					<li>
+						<a class="navtext" href="./sort.html">排序算法</a>
+						<ol>
+							<li class="navtext"><a href="./sort.html">冒泡排序</a></li>
+							<li class="navtext"><a href="./sort.html">选择排序</a></li>
+							<li class="navtext"><a href="./sort.html">归并排序</a></li>
+							<li class="navtext"><a href="./sort.html">快速排序</a></li>
+							<li class="navtext"><a href="./sort.html">希尔排序</a></li>
+							<li class="navtext"><a href="./sort.html">基数排序</a></li>
+						</ol>
+					</li>
+					<li>
+						<a class="navtext" href="./list.html">线性表</a>
+						<ol>
+							<li class="navtext"><a href="./list.html">链表</a></li>
+							<li class="navtext"><a href="./hash.html">哈希表</a></li>
+						</ol>
+					</li>
+					<li>
+						<a class="navtext" href="./BFS_Traverse.html">图论</a>
+						<ol>
+							<li class="navtext"><a href="./Dijkstra.html">Dijsktra</a></li>
+							<li class="navtext"><a href="./Dijkstra.html">Floyd</a></li>
+							<li class="navtext"><a href="./BFS_Traverse.html">BFS</a></li>
+							<li class="navtext"><a href="./DFS_Traverse.html">DFS</a></li>
+						</ol>
+					</li>
+					<li>
+						<a class="navtext" href="./binaryTree.html">树、堆</a>
+						<ol>
+							<li class="navtext"><a href="./binaryTree.html">树的遍历</a></li>
+							<li class="navtext"><a href="./binaryTree.html">二叉搜索树</a></li>
+							<li class="navtext"><a href="./binaryTree.html">二叉堆</a></li>
+							<li class="navtext"><a href="./binaryTree.html">堆排序</a></li>
+						</ol>
+					</li>
+					<li class="underline"></li>
+				</ul>
+			</div>
+		</div>
+<!-----------主体部分--------------->
+<h1 id="tit">哈希表</h1>
+<div class="wrapper" id="sort_in">
+	  <div class="input-data">
+		  <input id="input" type="text" required>
+		  <div class="underline"></div>
+		  <label>一次输入一个数</label>
+	  </div>
+</div>
+<button class="btn" id="sort_btn" type="button">存储</button>
+<button class="btn" id="remove_btn" type="button">删除</button>
+<ul id="graph">
+	<li class="box">0</li>
+	<li class="col" id="table00"></li>
+	<li class="col" id="table01"></li>
+	<li class="col" id="table02"></li>
+	<li class="col" id="table03"></li>
+	<li class="col" id="table04"></li>
+	
+	<li class="box">1</li>
+	<li class="col" id="table10"></li>
+	<li class="col" id="table11"></li>
+	<li class="col" id="table12"></li>
+	<li class="col" id="table13"></li>
+	<li class="col" id="table14"></li>
+	
+	<li class="box">2</li>
+	<li class="col" id="table20"></li>
+	<li class="col" id="table21"></li>
+	<li class="col" id="table22"></li>
+	<li class="col" id="table23"></li>
+	<li class="col" id="table24"></li>
+	
+	<li class="box" >3</li>
+	<li class="col" id="table30"></li>
+	<li class="col" id="table31"></li>
+	<li class="col" id="table32"></li>
+	<li class="col" id="table33"></li>
+	<li class="col" id="table34"></li>
+	
+	<li class="box" >4</li>
+	<li class="col" id="table40"></li>
+	<li class="col" id="table41"></li>
+	<li class="col" id="table42"></li>
+	<li class="col" id="table43"></li>
+	<li class="col" id="table44"></li>
+	
+	<li class="box">5</li>
+	<li class="col" id="table50"></li>
+	<li class="col" id="table51"></li>
+	<li class="col" id="table52"></li>
+	<li class="col" id="table53"></li>
+	<li class="col" id="table54"></li>
+	
+	<li class="box">6</li>
+	<li class="col" id="table60"></li>
+	<li class="col" id="table61"></li>
+	<li class="col" id="table62"></li>
+	<li class="col" id="table63"></li>
+	<li class="col" id="table64"></li>
+	
+	<li class="box">7</li>
+	<li class="col" id="table70"></li>
+	<li class="col" id="table71"></li>
+	<li class="col" id="table72"></li>
+	<li class="col" id="table73"></li>
+	<li class="col" id="table74"></li>
+	
+	<li class="box">8</li>
+	<li class="col" id="table80"></li>
+	<li class="col" id="table81"></li>
+	<li class="col" id="table82"></li>
+	<li class="col" id="table83"></li>
+	<li class="col" id="table84"></li>
+	
+	<li class="box">9</li>
+	<li class="col" id="table90"></li>
+	<li class="col" id="table91"></li>
+	<li class="col" id="table92"></li>
+	<li class="col" id="table93"></li>
+	<li class="col" id="table94"></li>
+</ul>
+<body>
+</body>
+</html>

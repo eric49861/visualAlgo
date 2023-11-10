@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example of Binary Tree</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="./library/JSAV.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="./library/jquery.transit.js"></script>
+    <script src="./library/raphael.js"></script>
+    <script src="./library/jquery.color.js"></script>
+    <script src="./library/JSAV.js"></script>
+    <script src="./Script/BinarySearchTree.js"></script>
+	<link rel="stylesheet" href="./css/nav.css"/>
+	<link rel="stylesheet" href="./css/input.css"/>
+    <style>
+        #av {
+            width: 98%;
+            position: relative;
+        }
+
+        .jsavcounter {
+            position: absolute;
+            top: 15px;
+        }
+
+        .jsavtree {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+
+        .visited {
+            background-color: red;
+        }
+
+        svg {
+            height: 600px;
+        }
+
+        path {
+            pointer-events: visible;
+        }
+		#tit{
+			text-align: center;
+			color:#1E1D7F;
+			font-family: "微软雅黑";
+			margin-bottom: 30px;
+		}
+		.btn{
+			height: 50px;
+			width:100px;
+			display: inline-block;
+			margin-top: 20px;
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-bottom: 20px;
+			border-radius: 24px;
+			border:none;
+			outline:none;
+			cursor:pointer;
+			background-color:#429BE5;
+			color:aliceblue;
+			font-weight: bold;
+			font-size:12px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+			transition: all 0.5s;
+		}
+		.btn:hover{
+			background-color:#72B7F1;
+			transform: scale(1.02);
+		}
+		#constructer{
+			display: grid;
+			grid-template-columns: 500px 150px 100px;
+			margin-left: 200px;
+		}
+		#order{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			align-items: center;
+			grid-column-gap: 10px;
+			margin-left: 450px;
+			width: 400px;
+			height: 80px;
+			background-color: #77C683;
+			border-radius: 20px;
+			margin-top: 30px;
+		}
+		#preOrder,#midOrder,#postOrder{
+			position: relative;
+			top:-5px;
+		}
+    </style>
+</head>
+
+<body>
+<!-----------导航部分--------------->
+<div class="navbar">
+			<div class="nav">
+				<ul>
+					<li>
+						<a href=".\start.html" id="logo">VisualGo</a>
+					</li>
+					<li>
+						<a class="navtext" href="./sort.html">排序算法</a>
+						<ol>
+							<li class="navtext"><a href="./sort.html">冒泡排序</a></li>
+							<li class="navtext"><a href="./sort.html">选择排序</a></li>
+							<li class="navtext"><a href="./sort.html">归并排序</a></li>
+							<li class="navtext"><a href="./sort.html">快速排序</a></li>
+							<li class="navtext"><a href="./sort.html">希尔排序</a></li>
+							<li class="navtext"><a href="./sort.html">基数排序</a></li>
+						</ol>
+					</li>
+					<li>
+						<a class="navtext" href="./list.html">线性表</a>
+						<ol>
+							<li class="navtext"><a href="./list.html">链表</a></li>
+							<li class="navtext"><a href="./hash.html">哈希表</a></li>
+						</ol>
+					</li>
+					<li>
+						<a class="navtext" href="./BFS_Traverse.html">图论</a>
+						<ol>
+							<li class="navtext"><a href="./Dijkstra.html">Dijsktra</a></li>
+							<li class="navtext"><a href="./Dijkstra.html">Floyd</a></li>
+							<li class="navtext"><a href="./BFS_Traverse.html">BFS</a></li>
+							<li class="navtext"><a href="./DFS_Traverse.html">DFS</a></li>
+						</ol>
+					</li>
+					<li>
+						<a class="navtext" href="./binaryTree.html">树、堆</a>
+						<ol>
+							<li class="navtext"><a href="./binaryTree.html">树的遍历</a></li>
+							<li class="navtext"><a href="./binaryTree.html">二叉搜索树</a></li>
+							<li class="navtext"><a href="./binaryTree.html">二叉堆</a></li>
+							<li class="navtext"><a href="./binaryTree.html">堆排序</a></li>
+						</ol>
+					</li>
+					<li class="underline"></li>
+				</ul>
+			</div>
+		</div>
+<!-----------主体部分--------------->
+    <h1  id="tit">二叉搜索树可视化</h1>
+<div id="constructer">
+	<div class="wrapper" id="sort_in">
+	  <div class="input-data">
+		  <input id="input" type="text" required>
+		  <div class="underline"></div>
+		  <label>请输入一串数字(以英文逗号间隔)</label>
+	  </div>
+</div>
+<button class="btn" id="display" type="button" onclick="binaryTreeShow()">构造</button>
+<button class="btn" id="addTreeNode" type="button">增加节点</button>
+</div>
+<div id="order">
+	<button class="btn" id="preOrder" type="button">前序遍历</button>
+	<button class="btn" id="midOrder" type="button">中序遍历</button>
+	<button class="btn" id="postOrder" type="button">后序遍历</button>
+</div>
+	
+    <div id="av">
+        <div class="jsavcontrols"></div>
+        <span class="jsavcounter"></span>
+    </div>
+
+</body>
+
+</html>

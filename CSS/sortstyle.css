@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* CSS Document */
+#toubu{
+	height: 100px;
+	width: 1240px;
+}
+#graph {
+	width:1240px;
+	height: 400px;
+	margin: 0 auto;
+	list-style: none;
+	padding-left:370px;
+	display:grid;
+	grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+	column-gap: 10px;
+}
+
+#graph li{
+	list-style: none;
+	float: left;
+	height:400px;
+	width: 50px;
+	align-items: end; 
+	display: grid;
+}
+.b{
+	width: 50px;
+	align-items: end;
+	
+}
+#textgraph{
+	width: 1240px;
+	height: 20px;
+	display:inline-block;
+	padding-left:370px;
+	display: grid;
+	grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+	column-gap: 10px;
+}
+.tebox{
+	width: 50px;
+	list-style: none;
+	float: left;
+	color:#d75241;
+	font-size: 16px;
+	text-align: center;	
+}
+.sort_btn{
+	width: 40px;
+    height: 40px;
+	color:cadetblue;
+    border-radius: 50%;
+}
