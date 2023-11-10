@@ -11,14 +11,13 @@
 
 ## 项目主要页面
 
-![1](.\md-imgs\1.png)
+![1](https://github.com/eric49861/visualAlgo/blob/main/md-imgs/1.png)
 
-![2](.\md-imgs\2.png)
+![2](https://github.com/eric49861/visualAlgo/blob/main/md-imgs/2.png)
+![3](https://github.com/eric49861/visualAlgo/blob/main/md-imgs/3.png)
 
-![3](.\md-imgs\3.png)
+![4](https://github.com/eric49861/visualAlgo/blob/main/md-imgs/4.png)
 
-![4](.\md-imgs\4.png)
+![5](https://github.com/eric49861/visualAlgo/blob/main/md-imgs/5.png)
 
-![5](.\md-imgs\5.png)
-
-![6](.\md-imgs\6.png)
+![6](https://github.com/eric49861/visualAlgo/blob/main/md-imgs/6.png)
